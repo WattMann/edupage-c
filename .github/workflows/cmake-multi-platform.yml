@@ -47,7 +47,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Install libcurl
+    - name: Update submodules
+      shell: bash
+      run: git pull --recurse-submodules
+      
+    - name: Install curl
       id: libcurl
       shell: bash
       run: sudo apt-get install -y curl
